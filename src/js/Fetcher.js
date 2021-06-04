@@ -18,6 +18,22 @@ class Fetcher {
 
         return response;
     }
+
+    async get(endpoint, filterJsonKeys = []) {
+        const response = await this.doFetch(endpoint);
+
+        if(!response.ok) {
+            throw new Error(`Fetch error ${response.status}`);
+        }
+
+        let jsonResult = await response.json();
+
+        // Filter out sub part of json response if not the entire object is wanted.
+        // If no keys are given, the response is returned as the endpoint has responded.
+        filterJsonKeys.forEach(key => jsonResult = jsonResult[key]);
+
+        return jsonResult;
+    }
 }
 
 export default Fetcher;

@@ -5,22 +5,6 @@ class JsonPlaceholderAPI extends Fetcher {
         super('https://jsonplaceholder.typicode.com');
     }
 
-    async get(endpoint, filterJsonKeys = []) {
-        const response = await this.doFetch(endpoint);
-
-        if(!response.ok) {
-            throw new Error(`JsonPlaceholder fetch error ${response.status}`);
-        }
-
-        let jsonResult = await response.json();
-
-        // Filter out sub part of json response if not the entire object is wanted.
-        // If no keys are given, the response is returned as the endpoint has responded.
-        filterJsonKeys.forEach(key => jsonResult = jsonResult[key]);
-
-        return jsonResult;
-    }
-
     async getPosts() {
         return await this.get('/posts');
     }
@@ -55,6 +39,7 @@ class JsonPlaceholderAPI extends Fetcher {
 
     // This example is just for demonstration on how to send multiple requests.
     // If you have access to the API-backend you should make a route that returns this behaviour in a single request.
+    // But if you don't have backend access to the API, this is a good option.
     async getPostsWithUsers() {
         const [allPosts, allUsers] = await Promise.all([
             this.getPosts(),

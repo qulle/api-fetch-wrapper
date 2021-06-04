@@ -2,7 +2,7 @@
 ### Creating an abstract layer to wrap all API related code inside a dedicated class hierarchy.
 
 ## Demo
-I have put together a small demo page to show the code in action. [Demo](https://qulle.github.io/api-fetch-wrapper/)
+I have put together a small [demo](https://qulle.github.io/api-fetch-wrapper/) page to show the code in action.
 
 ## Get started
 The dev-environment uses npm so you need to have [Node.js](https://nodejs.org/en/) installed. \
@@ -29,6 +29,17 @@ $ npm run clean
 ```
 
 ## About the code
+The following sample code shows how to use the API wrapper. A more indepth explanations follows below.
+```javascript
+const jsonPlaceholderAPI = new JsonPlaceholderAPI();
+
+jsonPlaceholderAPI.getTodos().then(result => {
+    console.table(result);
+}).catch(error => {
+    console.log(error);
+});
+```
+
 The code works around the `fetch` object. The fetch object have been wrapped in a class called `Fetcher`. \
 This class acts as the base class and helps with error handling and makes it possible to set a request timeout.
 ```javascript
@@ -52,6 +63,22 @@ class Fetcher {
 
         return response;
     }
+
+    async get(endpoint, filterJsonKeys = []) {
+        const response = await this.doFetch(endpoint);
+
+        if(!response.ok) {
+            throw new Error(`Fetch error ${response.status}`);
+        }
+
+        let jsonResult = await response.json();
+
+        // Filter out sub part of json response if not the entire object is wanted.
+        // If no keys are given, the response is returned as the endpoint has responded.
+        filterJsonKeys.forEach(key => jsonResult = jsonResult[key]);
+
+        return jsonResult;
+    }
 }
 
 export default Fetcher;
@@ -64,22 +91,6 @@ import Fetcher from './Fetcher';
 class JsonPlaceholderAPI extends Fetcher {
     constructor() {
         super('https://jsonplaceholder.typicode.com');
-    }
-
-    async get(endpoint, filterJsonKeys = []) {
-        const response = await this.doFetch(endpoint);
-
-        if(!response.ok) {
-            throw new Error(`JsonPlaceholder fetch error ${response.status}`);
-        }
-
-        let jsonResult = await response.json();
-
-        // Filter out sub part of json response if not the entire object is wanted.
-        // If no keys are given, the response is returned as the endpoint has responded.
-        filterJsonKeys.forEach(key => jsonResult = jsonResult[key]);
-
-        return jsonResult;
     }
 
     async getPosts() {
@@ -116,6 +127,7 @@ class JsonPlaceholderAPI extends Fetcher {
 
     // This example is just for demonstration on how to send multiple requests.
     // If you have access to the API-backend you should make a route that returns this behaviour in a single request.
+    // But if you don't have backend access to the API, this is a good option.
     async getPostsWithUsers() {
         const [allPosts, allUsers] = await Promise.all([
             this.getPosts(),
