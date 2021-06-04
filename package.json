@@ -1,0 +1,29 @@
+{
+    "name": "api-fetch-wrapper",
+    "version": "1.0.0",
+    "browserslist": [
+        "since 2017-06"
+    ],
+    "description": "Creating an abstract layer to wrap all api related code inside a dedicated class hierarchy.",
+    "main": "Fetcher.js",
+    "scripts": {
+        "start": "parcel src/index.html --open",
+        "build": "parcel build --public-url . src/index.html",
+        "clean": "rm -rf dist/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/qulle/api-fetch-wrapper.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/qulle/api-fetch-wrapper/issues"
+    },
+    "homepage": "https://github.com/qulle/api-fetch-wrapper#readme",
+    "devDependencies": {
+        "babel-core": "^6.26.3",
+        "parcel-bundler": "^1.12.5"
+    },
+    "dependencies": {}
+}

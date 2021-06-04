@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>JsonPlaceholder API Wrapper</title>
+</head>
+<body>
+    <main>
+        <h1>Posts</h1>
+<pre><code class="language-javascript">jsonPlaceholderAPI.getPosts().then(result => {
+    console.table(result);
+}).catch(error => {
+    console.log(error);
+});</code></pre>
+
+        <button type="button" id="fetch-posts">Make API call</button>
+        <button type="button" class="btn-collapse">Collapse</button>
+        <pre><code id="fetch-posts-output" class="language-javascript">{}</code></pre>
+
+        <h1>Posts by id</h1>
+<pre><code class="language-javascript">jsonPlaceholderAPI.getPostById(3).then(result => {
+    console.table(result);
+}).catch(error => {
+    console.log(error);
+});</code></pre>
+            
+        <button type="button" id="fetch-post-by-id">Make API call</button>
+        <button type="button" class="btn-collapse">Collapse</button>
+        <pre><code id="fetch-post-by-id-output" class="language-javascript">{}</code></pre>
+
+        <h1>Comments</h1>
+<pre><code class="language-javascript">jsonPlaceholderAPI.getComments().then(result => {
+    console.table(result);
+}).catch(error => {
+    console.log(error);
+});</code></pre>
+            
+        <button type="button" id="fetch-comments">Make API call</button>
+        <button type="button" class="btn-collapse">Collapse</button>
+        <pre><code id="fetch-comments-output" class="language-javascript">{}</code></pre>
+
+        <h1>Comments for post with id</h1>
+<pre><code class="language-javascript">jsonPlaceholderAPI.getCommentsForPostWithId(3).then(result => {
+    console.table(result);
+}).catch(error => {
+    console.log(error);
+});</code></pre>
+            
+        <button type="button" id="fetch-comments-for-post-by-id">Make API call</button>
+        <button type="button" class="btn-collapse">Collapse</button>
+        <pre><code id="fetch-comments-for-post-by-id-output" class="language-javascript">{}</code></pre>
+
+        <h1>Albums</h1>
+<pre><code class="language-javascript">jsonPlaceholderAPI.getAlbums().then(result => {
+    console.table(result);
+}).catch(error => {
+    console.log(error);
+});</code></pre>
+            
+        <button type="button" id="fetch-albums">Make API call</button>
+        <button type="button" class="btn-collapse">Collapse</button>
+        <pre><code id="fetch-albums-output" class="language-javascript">{}</code></pre>
+
+        <h1>Photos</h1>
+<pre><code class="language-javascript">jsonPlaceholderAPI.getPhotos().then(result => {
+    console.table(result);
+}).catch(error => {
+    console.log(error);
+});</code></pre>
+            
+        <button type="button" id="fetch-photos">Make API call</button>
+        <button type="button" class="btn-collapse">Collapse</button>
+        <pre><code id="fetch-photos-output" class="language-javascript">{}</code></pre>
+
+        <h1>Todos</h1>
+<pre><code class="language-javascript">jsonPlaceholderAPI.getTodos().then(result => {
+    console.table(result);
+}).catch(error => {
+    console.log(error);
+});</code></pre>
+            
+        <button type="button" id="fetch-todos">Make API call</button>
+        <button type="button" class="btn-collapse">Collapse</button>
+        <pre><code id="fetch-todos-output" class="language-javascript">{}</code></pre>
+
+        <h1>Users</h1>
+<pre><code class="language-javascript">jsonPlaceholderAPI.getUsers().then(result => {
+    console.table(result);
+}).catch(error => {
+    console.log(error);
+});</code></pre>
+            
+        <button type="button" id="fetch-users">Make API call</button>
+        <button type="button" class="btn-collapse">Collapse</button>
+        <pre><code id="fetch-users-output" class="language-javascript">{}</code></pre>
+
+        <h1>Posts with users</h1>
+<pre><code class="language-javascript">jsonPlaceholderAPI.getPostsWithUsers().then(result => {
+    console.table(result);
+}).catch(error => {
+    console.log(error);
+});</code></pre>
+                    
+        <button type="button" id="fetch-posts-with-users">Make API call</button>
+        <button type="button" class="btn-collapse">Collapse</button>  
+        <pre><code id="fetch-posts-with-users-output" class="language-javascript">{}</code></pre>
+    </main>
+
+    <script src="/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/prism.min.js"></script>
+</body>
+</html>
