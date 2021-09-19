@@ -28,6 +28,9 @@ Use the following command to remove dist directory. Uses `rm -rf dist/`
 $ npm run clean
 ```
 
+## Axios
+This repo uses vanilla JavaScript and the built in `Fetch` object. There are plenty of http libraries to use instead of Fetch, for example [Axios](https://axios-http.com/).
+
 ## About the code
 The following sample code shows how to use the API wrapper. A more indepth explanations follows below.
 ```javascript

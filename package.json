@@ -22,7 +22,6 @@
     },
     "homepage": "https://github.com/qulle/api-fetch-wrapper#readme",
     "devDependencies": {
-        "babel-core": "^6.26.3",
         "parcel-bundler": "^1.12.5"
     },
     "dependencies": {}
