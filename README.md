@@ -23,7 +23,7 @@ Use the following command to make a proper build for distribution.
 $ npm run build
 ```
 
-Use the following command to remove dist directory. Uses `rm -rf dist/` 
+Use the following command to remove dist directory. Uses `rm -rf dist/ .parcel-cache/` 
 ```
 $ npm run clean
 ```

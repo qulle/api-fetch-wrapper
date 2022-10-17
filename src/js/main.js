@@ -17,10 +17,10 @@ const jsonPlaceholderAPI = new JsonPlaceholderAPI();
     const output = document.querySelector(`#fetch-${item.name}-output`);
 
     button.addEventListener('click', (event) => {
-        output.innerText = 'Working...';
+        output.innerText = 'Fetching data...';
 
         item.method().then(result => {
-            const jsonStr = JSON.stringify(result, null, '    ');
+            const jsonStr = JSON.stringify(result, null, 4);
             output.innerHTML = jsonStr;
         }).catch(error => {
             output.innerHTML = error;
