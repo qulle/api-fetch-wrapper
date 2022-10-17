@@ -4,8 +4,7 @@
     "browserslist": [
         "since 2017-06"
     ],
-    "description": "Creating an abstract layer to wrap all api related code inside a dedicated class hierarchy.",
-    "main": "Fetcher.js",
+    "description": "Creating an abstract layer to wrap all API related code inside a dedicated class hierarchy.",
     "scripts": {
         "start": "parcel src/index.html --open",
         "build": "parcel build --public-url . src/index.html",
@@ -15,7 +14,7 @@
         "type": "git",
         "url": "git+https://github.com/qulle/api-fetch-wrapper.git"
     },
-    "author": "",
+    "author": "Qulle",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/qulle/api-fetch-wrapper/issues"
