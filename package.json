@@ -15,7 +15,7 @@
         "url": "git+https://github.com/qulle/api-fetch-wrapper.git"
     },
     "author": "Qulle",
-    "license": "ISC",
+    "license": "BSD-2-Clause license",
     "bugs": {
         "url": "https://github.com/qulle/api-fetch-wrapper/issues"
     },
